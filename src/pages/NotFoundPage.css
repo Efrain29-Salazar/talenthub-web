@@ -1,0 +1,32 @@
+.not-found-page {
+  margin-top: 2rem;
+}
+
+.not-found-page-title {
+  font-size: 1.75rem;
+}
+
+.not-found-page-text {
+  margin: 0.5rem 0 1rem;
+  color: var(--color-muted);
+}
+
+.not-found-page-link {
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.not-found-page-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .not-found-page {
+    margin-top: 1.25rem;
+  }
+
+  .not-found-page-title {
+    font-size: 1.5rem;
+  }
+}

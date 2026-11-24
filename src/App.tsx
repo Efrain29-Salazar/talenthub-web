@@ -1,13 +1,26 @@
-// rafc + TAB O ENTER
+import { Navigate, Route, Routes } from 'react-router';
+import { Header } from './components/Header';
+import { CandidateDetailPage } from './pages/CandidateDetailPage';
+import { CandidatesPage } from './pages/CandidatesPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 
-
-export const App = () => {
+// App solo ensambla: la cabecera y las rutas. No tiene datos ni lógica.
+const App = () => {
   return (
-    <main>
-      <h1>TatentHub</h1>
-      <p>Plataform de gestión de vacantes y postulaciones</p>
-    </main>
-  )
-}
+    <div>
+      <Header />
+      <main className="container">
+        <Routes>
+          {/* La raíz lleva a la lista. replace evita que "atrás" vuelva a una dirección que redirige. */}
+          <Route path="/" element={<Navigate to="/candidates" replace />} />
+          <Route path="/candidates" element={<CandidatesPage />} />
+          <Route path="/candidates/:id" element={<CandidateDetailPage />} />
+          {/* Cualquier otra dirección. */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </main>
+    </div>
+  );
+};
 
 export default App;

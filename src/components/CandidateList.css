@@ -1,0 +1,7 @@
+/* Una cuadrícula que se adapta sola: tantas columnas de al menos 280px como quepan.
+   min(280px, 100%) evita que la tarjeta se desborde en pantallas muy angostas. */
+.candidate-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+  gap: 1rem;
+}
